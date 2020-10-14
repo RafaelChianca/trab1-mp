@@ -56,5 +56,13 @@ int Top(struct StackNode* root) {
 int main() {
 	struct StackNode* stack = NULL;
 
+	Push(&stack, 10);
+	Push(&stack, 20);
+	Push(&stack, 30);
+
+	printf("Pop na pilha: %d\n", Pop(&stack));
+
+	printf("Elemento no topo: %d\n", Top(stack));
+
 	return 0;
 }

@@ -8,3 +8,4 @@ void DeleteStack(struct StackNode*);
 int IsEmpty(struct StackNode*);
 void Push(struct StackNode**, int);
 int Pop(struct StackNode**);
+int Top(struct StackNode*);

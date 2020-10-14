@@ -47,6 +47,12 @@ int Pop(struct StackNode** root) {
 	return Popped;
 }
 
+int Top(struct StackNode* root) {
+	if (IsEmpty(root))
+		return INT_MIN;
+	return root->data;
+}
+
 int main() {
 	struct StackNode* stack = NULL;
 

@@ -25,6 +25,28 @@ void DeleteStack(struct StackNode* root)  {
     }
 }
 
+int IsEmpty(struct StackNode* root) {
+	return !root;
+}
+
+void Push(struct StackNode** root, int data) {
+	struct StackNode* stackNode = CreateStack(data);
+	stackNode->next = *root;
+	*root = stackNode;
+	printf("%d Adicionada a pilha\n", data);
+}
+
+int Pop(struct StackNode** root) {
+	if (IsEmpty(*root))
+		return INT_MIN;
+	struct StackNode* temp = *root;
+	*root = (*root)->next;
+	int Popped = temp->itemType;
+	free(temp);
+
+	return Popped;
+}
+
 int main() {
 	struct StackNode* stack = NULL;
 

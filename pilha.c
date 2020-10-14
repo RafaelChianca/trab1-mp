@@ -9,7 +9,7 @@
 struct StackNode* CreateStack(int data) {
 	struct StackNode* stackNode = 
         (struct StackNode*)malloc(sizeof(struct StackNode));
-	stackNode->data = data;
+	stackNode->itemType = data;
 	stackNode->next = NULL;
 	return stackNode;
 }

@@ -1,5 +1,5 @@
 struct StackNode {
-	int ItemType;
+	int itemType;
 	struct StackNode* next;
 };
 

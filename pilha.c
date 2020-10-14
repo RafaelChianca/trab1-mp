@@ -14,6 +14,17 @@ struct StackNode* CreateStack(int data) {
 	return stackNode;
 }
 
+void DeleteStack(struct StackNode* root)  {
+    struct StackNode* current = root;
+    struct StackNode* next;
+
+    while (current != NULL) {
+        next = current->next;
+        free(current);
+        current = next;
+    }
+}
+
 int main() {
 	struct StackNode* stack = NULL;
 

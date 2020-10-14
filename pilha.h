@@ -4,3 +4,4 @@ struct StackNode {
 };
 
 struct StackNode* CreateStack(int);
+void DeleteStack(struct StackNode*);

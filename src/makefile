@@ -13,14 +13,21 @@ DEPS = $(patsubst %,$(IDIR)/%,$(_DEPS))
 _OBJ = pilha.o
 OBJ = $(patsubst %,$(ODIR)/%,$(_OBJ))
 
+T_OBJ = testa_pilha.o
+TOBJ = $(patsubst %,$(ODIR)/%,$(_OBJ))
+
 
 $(ODIR)/%.o: %.c $(DEPS)
 	$(CC) -c -o $@ $< $(CFLAGS)
 
-hellomake: $(OBJ)
+pilhamake: $(OBJ)
+	$(CC) -o $@ $^ $(CFLAGS) $(LIBS)
+
+testemake: $(TOBJ)
 	$(CC) -o $@ $^ $(CFLAGS) $(LIBS)
 
 .PHONY: clean
 
 clean:
-	rm -f $(ODIR)/*.o *~ core $(INCDIR)/*~ 
+	rm -f $(ODIR)/*.o *~ core $(INCDIR)/*~ pilhamke
+	rm -f $(ODIR)/*.o *~ core $(INCDIR)/*~ testemake

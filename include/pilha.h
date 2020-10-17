@@ -4,7 +4,7 @@ struct StackNode {
 };
 
 struct StackNode* CreateStack(int);
-void DeleteStack(struct StackNode**);
+void DeleteStack(struct StackNode*);
 int StackSize(struct StackNode*);
 int SetSize(struct StackNode**, int);
 int IsEmpty(struct StackNode*);

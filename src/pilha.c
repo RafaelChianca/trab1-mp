@@ -14,12 +14,12 @@ struct StackNode* CreateStack(int data) {
 	return stackNode;
 }
 
-void DeleteStack(struct StackNode** root)  {
-	struct StackNode* temp = *root;
+void DeleteStack(struct StackNode* root)  {
+	struct StackNode* temp = root;
 
-	while (!IsEmpty(*root)) {
-		temp = *root;
-		*root = (*root)->next;
+	while (!IsEmpty(root)) {
+		temp = root;
+		root = root->next;
 		free(temp);
 	}
 
@@ -109,7 +109,7 @@ int main() {
 
 	printf("Tamanho da pilha: %d\n", StackSize(stack));
 
-	DeleteStack(&stack);
+	DeleteStack(stack);
 
 	return 0;
 }

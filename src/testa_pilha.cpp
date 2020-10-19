@@ -41,3 +41,18 @@ TEST_CASE( "Tests for stack size", "[size]" ) {
   Pop(&stack);
   REQUIRE( StackSize(stack) == 2 );
 }
+
+TEST_CASE( "Tests for IsEmpty and IsFull", "[emptyfull]" ) {
+  
+  StackNode *stack = CreateStack(3);
+
+  REQUIRE( IsEmpty(stack) == 1 );
+
+  Push(&stack, 10);
+  REQUIRE( IsEmpty(stack) == 0 );
+  REQUIRE( IsFull(stack) == 0 );
+
+  Push(&stack, 20);
+  Push(&stack, 30);
+  REQUIRE( IsFull(stack) == 1 );
+}

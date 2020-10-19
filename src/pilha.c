@@ -47,6 +47,9 @@ int StackSize(struct StackNode* root) {
 int SetSize(struct StackNode** root, int size) {
 	int current_size = StackSize(*root);
 
+	if ((*root) == NULL)
+		return 0;
+
 	struct StackNode* current = *root;
 
 	while (current != NULL) {

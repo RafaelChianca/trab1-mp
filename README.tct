@@ -1,8 +1,11 @@
 Rafael Chianca 15/0145608
 
+Para a análise do histórico:
+https://github.com/RafaelChianca/trab1-mp
+
 O tipo de itemType é estático e do tipo Inteiro, pois não consegui implementar o tipo dinâmico.
 
-Compilação:
+****Compilação:****
 Os seguintes passos devem ser feito dentro da pasta "src".
 -Para compilar o programa de pilha feito com lista encadeada, utilize o comando:
     make list
@@ -10,7 +13,7 @@ Os seguintes passos devem ser feito dentro da pasta "src".
 -Para compilar o programa de pilha feito com vetor, utilize o comando:
     make vector
 
-Execução:
+****Execução:****
 -Para executar o programa de pilha feito com lista encadeada, utilize o comando:
     ./list
 

@@ -7,27 +7,24 @@ LDIR =../lib
 
 LIBS=-lm
 
-_DEPS = pilha.h
+_DEPS = pilha.h catch.hpp
 DEPS = $(patsubst %,$(IDIR)/%,$(_DEPS))
 
-_OBJ = pilha.o
+_OBJ = pilha.o pilha_vector.o
 OBJ = $(patsubst %,$(ODIR)/%,$(_OBJ))
-
-T_OBJ = testa_pilha.o
-TOBJ = $(patsubst %,$(ODIR)/%,$(_OBJ))
-
 
 $(ODIR)/%.o: %.c $(DEPS)
 	$(CC) -c -o $@ $< $(CFLAGS)
 
-pilhamake: $(OBJ)
-	$(CC) -o $@ $^ $(CFLAGS) $(LIBS)
+all: list vector
 
-testemake: $(TOBJ)
-	$(CC) -o $@ $^ $(CFLAGS) $(LIBS)
+list: testa_pilha.cpp pilha.c
+	g++ -std=c++11 -o list -ftest-coverage -fprofile-arcs testa_pilha.cpp pilha.c -I../include
 
+vector: testa_pilha.cpp pilha_vector.c
+	g++ -std=c++11 -o vector -ftest-coverage -fprofile-arcs testa_pilha.cpp pilha_vector.c -I../include	
+	
 .PHONY: clean
 
 clean:
-	rm -f $(ODIR)/*.o *~ core $(INCDIR)/*~ pilhamke
-	rm -f $(ODIR)/*.o *~ core $(INCDIR)/*~ testemake
+	rm -f $(ODIR)/*.o *~ core $(INCDIR)/*~

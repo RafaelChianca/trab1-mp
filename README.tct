@@ -1,0 +1,18 @@
+Rafael Chianca 15/0145608
+
+O tipo de itemType é estático e do tipo Inteiro, pois não consegui implementar o tipo dinâmico.
+
+Compilação:
+Os seguintes passos devem ser feito dentro da pasta "src".
+-Para compilar o programa de pilha feito com lista encadeada, utilize o comando:
+    make list
+
+-Para compilar o programa de pilha feito com vetor, utilize o comando:
+    make vector
+
+Execução:
+-Para executar o programa de pilha feito com lista encadeada, utilize o comando:
+    ./list
+
+-Para executar o programa de pilha feito com vetor, utilize o comando:
+    ./vector

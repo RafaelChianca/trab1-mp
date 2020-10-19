@@ -24,3 +24,20 @@ TEST_CASE( "Tests for push and pop", "[pushpop]" ) {
   Push(&stack, 50);
   REQUIRE( Top(stack) == 40 ); 
 }
+
+TEST_CASE( "Tests for stack size", "[size]" ) {
+  
+  StackNode *stack = CreateStack(5);
+
+  REQUIRE( StackSize(stack) == 0 );
+  
+  Push(&stack, 10);
+  REQUIRE( StackSize(stack) == 1 );
+
+  Push(&stack, 20);
+  Push(&stack, 30);
+  REQUIRE( StackSize(stack) == 3 );
+
+  Pop(&stack);
+  REQUIRE( StackSize(stack) == 2 );
+}

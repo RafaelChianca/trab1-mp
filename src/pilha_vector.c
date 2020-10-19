@@ -13,6 +13,7 @@ struct StackNode* CreateStack(int capacity) {
 void DeleteStack(struct StackNode** stack) {
     free((*stack)->array);
     free(*stack);
+	*stack = NULL;
 }
 
 int StackSize(struct StackNode* stack) {
@@ -26,11 +27,11 @@ int StackSize(struct StackNode* stack) {
 }
 
 int SetSize(struct StackNode** stack, int size) {
+	if (*stack == NULL)
+		return 0;
+	
 	int current_size = StackSize(*stack);
 	int diff = 0;
-
-	if (stack == NULL)
-		return 0;
 
 	(*stack)->capacity = size;
 
@@ -49,10 +50,14 @@ int SetSize(struct StackNode** stack, int size) {
 }
 
 int IsFull(struct StackNode* stack) {
+	if (stack == NULL)
+		return 0; 
 	return stack->top == stack->capacity - 1;
 }
 
 int IsEmpty(struct StackNode* stack) {
+	if (stack == NULL)
+		return 1; 
 	return stack->top == -1; 
 }
 

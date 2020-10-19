@@ -73,6 +73,10 @@ TEST_CASE( "Tests for SetSize", "[setsize]" ) {
   Push(&stack, 20);
   Push(&stack, 30);
   REQUIRE( IsFull(stack) == 1 );
+
+  DeleteStack(&stack);
+  REQUIRE( SetSize(&stack, 10) == 0 );
+
 }
 
 TEST_CASE( "Tests for DeleteStack", "[delete]" ) {

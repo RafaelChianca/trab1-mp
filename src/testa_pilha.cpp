@@ -56,3 +56,21 @@ TEST_CASE( "Tests for IsEmpty and IsFull", "[emptyfull]" ) {
   Push(&stack, 30);
   REQUIRE( IsFull(stack) == 1 );
 }
+
+TEST_CASE( "Tests for SetSize", "[setsize]" ) {
+  
+  StackNode *stack = CreateStack(1);
+
+  REQUIRE( IsEmpty(stack) == 1 );
+
+  Push(&stack, 10);
+  REQUIRE( IsEmpty(stack) == 0 );
+  REQUIRE( IsFull(stack) == 1 );
+
+  SetSize(&stack, 3);
+  REQUIRE( IsFull(stack) == 0 );
+
+  Push(&stack, 20);
+  Push(&stack, 30);
+  REQUIRE( IsFull(stack) == 1 );
+}
